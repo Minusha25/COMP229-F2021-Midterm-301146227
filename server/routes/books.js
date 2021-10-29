@@ -50,7 +50,6 @@ router.post('/add', (req, res, next) => {
   let data = req.body;
   const newBook = {
     Title: data.title,
-    Description: data.description,
     Price: parseInt(data.price),
     Author: data.author,
     Genre: data.genre
@@ -89,12 +88,11 @@ router.post('/:id', (req, res, next) => {
   let data = req.body;
   const upsertData = {
     Title: data.title,
-    Description: data.description,
     Price: parseInt(data.price),
     Author: data.author,
     Genre: data.genre
   }
-  book.update( {_id: req.params.id} , upsertData, {upsert: true}, (err, result) => {
+  book.update{_id: req.params.id} , upsertData, {upsert: true}, (err, result) => {
     if (err) {
       return console.error(err);
     }
