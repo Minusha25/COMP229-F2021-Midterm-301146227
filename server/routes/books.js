@@ -92,7 +92,7 @@ router.post('/:id', (req, res, next) => {
     Author: data.author,
     Genre: data.genre
   }
-  book.update{_id: req.params.id} , upsertData, {upsert: true}, (err, result) => {
+  book.updateOne ( {_id: req.params.id} , upsertData, {upsert: true}, (err, result) => {
     if (err) {
       return console.error(err);
     }
